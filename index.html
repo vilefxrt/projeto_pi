@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador Financeiro</title>
+</head>
+<body>
+    <h1>Simulador Financeiro da Estufa Inteligente</h1>
+    
+    <strong><p>Insira o preço do KG do tomate:</p></strong>  
+    
+    <input type="number" step="0.01" id="vlr_Kg">
+    
+    <p>Insira a quantidade de plantas que tem dentro da estufa:</p>
+    
+    <input type="number" id="vlr_Plantas"> <br>
+    
+    <button onclick="analisarPrejuizo()">Analisar Prejuizo</button>
+    
+    <div id="resultado"></div>
+</body>
+</html>
+    <script>
+    function analisarPrejuizo() {
+    
+        let precoKg = Number(vlr_Kg.value);
+        let valorPlantas = Number(vlr_Plantas.value);
+       
+        // media de produção
+
+       let producaoSemcontrole = valorPlantas * 2.25;
+       let producaoComControle = valorPlantas * 5;
+
+       // calculo do prejuizo
+      
+       let diferencaKg = producaoComControle - producaoSemcontrole;
+       let prejuizo = diferencaKg * precoKg;
+      
+       // exibir resultado
+      
+       resultado.innerHTML = `Sem os sensores de análise IoT você produz aproximadamente ${producaoSemcontrole} Kg <br>
+       Com os sensores de análise IoT você produz aproximadamente ${producaoComControle} Kg<br>
+       Você deixa de produzir ${diferencaKg} KG de tomate <br> 
+       Prejuízo estimado de R$ <strong style="color: red;">${prejuizo.toFixed(2)} a cada ${diferencaKg} KG </strong>`
+       ;
+    }
+    </script>

@@ -29,8 +29,8 @@
        
         // media de produção
 
-       let producaoSemcontrole = valorPlantas * 2.25;
-       let producaoComControle = valorPlantas * 5;
+       let producaoSemcontrole = valorPlantas * 2.25;  // <-- valor do kg: 2.25 kg por producao sem controle
+       let producaoComControle = valorPlantas * 5;    // <-- valor do kg: 5.00 kg por producao com controle
 
        // calculo do prejuizo
       
@@ -39,10 +39,10 @@
       
        // exibir resultado
       
-       resultado.innerHTML = `Sem os sensores de análise IoT você produz aproximadamente ${producaoSemcontrole} Kg <br>
-       Com os sensores de análise IoT você produz aproximadamente ${producaoComControle} Kg<br>
+       resultado.innerHTML = `Cem os sensores de análise IoT você produz aproximadamente ${producaoComControle} Kg <br>
+       Sem os sensores de análise IoT você produz aproximadamente ${producaoSemcontrole} Kg <br>
        Você deixa de produzir ${diferencaKg} KG de tomate <br> 
-       Prejuízo estimado de R$ <strong style="color: red;">${prejuizo.toFixed(2)} a cada ${diferencaKg} KG </strong>`
+       Prejuízo estimado de R$ <strong style="color: red;">${prejuizo.toFixed(2)} R$ </strong>`
        ;
     }
     </script>
